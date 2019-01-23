@@ -42,22 +42,25 @@ pedro.on('name', ()=>{
 sam.emit('name');
 pedro.emit('name');
 
-*/
+
 
 /////Readline Module ///////
 const readLine = require('readline');
 const rl = readLine.createInterface({input: process.stdin,
     output: process.stdout}); //creating instance of readline interface. input and object (process)
 
+
+    //random numbers created
 let num1 = Math.floor((Math.random() *10) + 1);
 let num2 = Math.floor((Math.random() *10) + 1);
 let answer = num1 + num2; 
-
+//stdin
 rl.question(`What is the sum of ${ num1 } + ${ num2 } ? \n`, (userInput)=>{
     if(userInput.trim() == answer){
         rl.close();
-    }
+    }//if answer is right, close rl 
     else{
+        //set prompt.
         rl.setPrompt('Incorrect answer, please try again \n');
         rl.prompt();
         rl.on('line', (userInput)=>{
@@ -75,6 +78,8 @@ rl.on('close', ()=>{
     console.log("Correct!");
 
 });
+
+*/
 
 
 
